@@ -28,6 +28,7 @@
 | ------------ | ---------- | ------------------------------ |
 | title        | string     | null: false                    |
 | content      | text       | null: false                    |
+| price_id     | integer    | null: false                    |
 | genre_id     | integer    | null: false                    |
 | shop_url     | string     |                                |
 | shop_address | string     |                                |
@@ -38,6 +39,7 @@
 - belongs_to :user
 - belongs_to :category
 - belongs_to_active_hash :genre
+- belongs_to_active_hash :price
 - has_many :comments
 - has_many :favorites
 - has_many :tags, through: :item_tags
@@ -72,9 +74,9 @@
 
 ## follows テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| follower_id | integer |                                |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| follower_id | integer    |                                |
 | followee_id | references | null: false, foreign_key: true |
 
 ### Association
@@ -128,6 +130,11 @@
 ### Association
 
 - has_many :users
+
+## price
+### Association
+
+- has_many :items
 
 ## genre
 ### Association
