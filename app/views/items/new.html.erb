@@ -1,6 +1,6 @@
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to 'Okurimono' , size: '185x50'), "/" %>
+    <%= link_to 'Okurimono', "/" %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">シェアしたい商品の情報を入力</h2>
@@ -25,84 +25,68 @@
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"投稿のタイトル", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          本文（商品の説明）
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（商品の特徴やどのような人へのプレゼントに向いているかなど）例）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
 
     <%# 商品の詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
+      <div class="weight-bold-text">投稿詳細</div>
       <div class="form">
+        <div class="weight-bold-text">
+          価格帯
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-price"}) %>
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
-          商品の状態
+          タグ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> %> %>
+        <div class="weight-bold-text">
+          ショップURL
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :shop_url, class:"select-box", id:"item-tag", placeholder:"オンラインショップもしくは販売店のURLを入力" %>
+        <div class="weight-bold-text">
+          販売店の住所
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :shop_address, class:"select-box", id:"item-tag", placeholder:"販売店舗がある場合、店舗の住所を入力してください" %>
       </div>
     </div>
     <%# /商品の詳細 %>
 
-    <%# 販売価格 %>
-    <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
-      </div>
-      <div>
-        <div class="price-content">
-          <div class="price-text">
-            <span>価格</span>
-            <span class="indispensable">必須</span>
-          </div>
-          <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
-        </div>
-        <div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-        </div>
-        </span>
-      </div>
-    </div>
-    <%# /販売価格 %>
-
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%= f.submit "投稿する" ,class:"post-btn" %>
       <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
   <% end %>
 
-  <footer class="items-sell-footer">
+  <footer class="items-post-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
       <li><a href="#">利用規約</a></li>
     </ul>
-    <%= link_to 'Okurimono' , size: '185x50'), "/" %>
+    <%= link_to 'Okurimono', "/" %>
     <p class="inc">
       ©︎Okurimono,Inc.
     </p>
