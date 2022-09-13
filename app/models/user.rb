@@ -8,6 +8,8 @@ class User < ApplicationRecord
   belongs_to :gender
   belongs_to :prefecture
 
+  has_many :items
+  
   with_options presence: true do
     validates :nickname
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
