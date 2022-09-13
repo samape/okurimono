@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        gender: 性別
+        prefecture: 居住エリア
+        introduction: プロフィール
+      item:
+        title: タイトル
+        content: 本文
+        image: 画像
+        genre: カテゴリー
+        price: 価格帯
+        shop_url: 販売店サイトのURL
+        shop_address: 販売店の住所
+        
