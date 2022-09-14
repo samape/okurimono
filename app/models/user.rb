@@ -9,11 +9,12 @@ class User < ApplicationRecord
   belongs_to :prefecture
 
   has_many :items
-  
+
   with_options presence: true do
     validates :nickname
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
   end
   
-  validates :gender_id, :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :gender_id, :prefecture_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :introduction, length: { maximum: 250 }
 end

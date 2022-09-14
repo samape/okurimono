@@ -5,8 +5,8 @@ ja:
         nickname: ニックネーム
         email: メールアドレス
         password: パスワード
-        gender: 性別
-        prefecture: 居住エリア
+        gender_id: 性別
+        prefecture_id: 居住エリア
         introduction: プロフィール
       item:
         title: タイトル
