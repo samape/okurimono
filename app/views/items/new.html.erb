@@ -4,7 +4,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">シェアしたい商品の情報を入力</h2>
-    <%= form_with model: @item, url: items_path, local: true do |f| %>
+    <%= form_with model: @item_category, url: items_path, id: 'new_post', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -15,10 +15,11 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
+        <div id="previews"></div>
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :images, name: 'item[images][]',data: {index: 0}, id:"item-image" %>
       </div>
     </div>
     <%# /商品画像 %>
@@ -52,12 +53,12 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           タグ
           <span class="indispensable">必須</span>
         </div>
-        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> %> %>
+        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> %>
         <div class="weight-bold-text">
           ショップURL
           <span class="indispensable">必須</span>
