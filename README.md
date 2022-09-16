@@ -1,3 +1,42 @@
+# アプリケーション
+Okurimono
+
+# アプリケーション概要
+プレゼントにおすすめな商品情報をシェアできる。
+
+# URL
+https://okurimono-gift.herokuapp.com/
+
+# テスト用アカウント
+・Basic認証ID：
+・Basic認証パスワード：
+・メールアドレス：
+・パスワード：
+
+# 利用方法
+## 
+
+##
+
+# アプリケーションを作成した背景
+
+# 洗い出した要件
+
+# 実装した機能についての画像やGIFおよびその説明
+
+# 実装予定の機能
+
+# データベース設計
+
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの動作方法
+
+# 工夫したポイント
+
+
 # テーブル設計
 
 ## users テーブル
@@ -29,7 +68,6 @@
 | title        | string     | null: false                    |
 | content      | text       | null: false                    |
 | price_id     | integer    | null: false                    |
-| genre_id     | integer    | null: false                    |
 | shop_url     | string     |                                |
 | shop_address | string     |                                |
 | user         | references | null: false, foreign_key: true |
