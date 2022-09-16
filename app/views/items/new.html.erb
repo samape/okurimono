@@ -1,9 +1,8 @@
 <div class="items-sell-contents">
-  <header class="items-sell-header">
-    <%= link_to 'Okurimono', "/" %>
-  </header>
+  <%= render "shared/second-header" %>
+  
   <div class="items-sell-main">
-    <h2 class="items-sell-title">シェアしたい商品の情報を入力</h2>
+    <h2 class="items-sell-title">シェアする商品の情報を入力</h2>
     <%= form_with model: @item_category, url: items_path, id: 'new_post', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -50,7 +49,7 @@
         </div>
         <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-price"}) %>
         <div class="weight-bold-text">
-          カテゴリー
+          カテゴリ
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
@@ -58,38 +57,30 @@
           タグ
           <span class="indispensable">必須</span>
         </div>
-        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> %>
+        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> 
+        <p>※下記どちらか一方を必ず入力してください。</p>
         <div class="weight-bold-text">
           ショップURL
-          <span class="indispensable">必須</span>
+          <span class="indispensable-opt">どちらか必須</span>
         </div>
-        <%= f.text_area :shop_url, class:"select-box", id:"item-tag", placeholder:"オンラインショップもしくは販売店のURLを入力" %>
+        <%= f.text_area :shop_url, class:"items-text", id:"item-tag", placeholder:"オンラインショップもしくは販売店のURLを入力" %>
         <div class="weight-bold-text">
           販売店の住所
-          <span class="indispensable">必須</span>
+          <span class="indispensable-opt">どちらか必須</span>
         </div>
-        <%= f.text_area :shop_address, class:"select-box", id:"item-tag", placeholder:"販売店舗がある場合、店舗の住所を入力してください" %>
+        <%= f.text_area :shop_address, class:"items-text", id:"item-tag", placeholder:"販売店舗がある場合、店舗の住所を入力してください" %>
       </div>
     </div>
     <%# /商品の詳細 %>
 
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"post-btn" %>
+    <div class="post-btn-contents">
+      <%= f.submit "シェアする" ,class:"post-btn" %>
       <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
   <% end %>
 
-  <footer class="items-post-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">利用規約</a></li>
-    </ul>
-    <%= link_to 'Okurimono', "/" %>
-    <p class="inc">
-      ©︎Okurimono,Inc.
-    </p>
-  </footer>
+  <%= render "shared/second-footer" %>
 </div>

@@ -4,22 +4,19 @@
   <%# 画面上部の帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      おすすめのプレゼントをシェアできるアプリ
+      おすすめのプレゼントアイディアをシェアできるアプリ
     </h2>
     <p class='service-explain'>
-      Okurimonoは大切な人へのプレゼント候補を探せる
-    </p>
-    <p class='service-explain'>
-      アプリです
+      Okurimonoでは大切な人へのプレゼント候補を探せます
     </p>
   </div>
   <%# /画面上部の帯部分  %>
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>おすすめプレゼント一覧</h2>
     <div class="subtitle" >
-      新規投稿商品
+      新着順
     </div>
     <ul class='item-lists'>
 
@@ -36,7 +33,7 @@
               <div class='item-price'>
                 <span><%= item.price.name %>円</span>
                 <%# <div class='star-btn'> %>
-                  <%# <%= image_tag "star.png", class:"star-icon" %> %>
+                  <%# <%= image_tag "star.png", class:"star-icon" %> 
                   <%# <span class='star-count'>0</span> %>
                 <%# </div> %>
               </div>
@@ -69,5 +66,5 @@
   </div>
   <%# /商品一覧 %>
 </div>
-<%= link_to '投稿する', new_item_path, class: 'purchase-btn' %>
+<%= link_to 'シェアする', new_item_path, class: 'purchase-btn' %>
 <%= render "shared/footer" %>
