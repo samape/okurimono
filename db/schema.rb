@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2022_09_12_125426) do
     t.string "title", null: false
     t.text "content", null: false
     t.integer "price_id", null: false
-    t.integer "genre_id", null: false
     t.string "shop_url"
     t.string "shop_address"
     t.bigint "user_id", null: false
