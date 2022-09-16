@@ -24,7 +24,7 @@
         <li class='list'>
           <%= link_to "#" do %>
             <div class='item-img-content'>
-              <%= image_tag item.images[0], class: "item-img" %>
+              <%= image_tag item.image, class: "item-img" if item.image.attached? %>
             </div>
             <div class='item-info'>
               <h3 class='item-name'>
@@ -38,22 +38,22 @@
                 <%# </div> %>
               </div>
             </div>
-          <% end %>
+          <% end %> 
         <% end %>
       </li>
       
       <% if @items.blank? %>
         <li class='list'>
           <%= link_to '#' do %>
-          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+          <%= image_tag "sample", class: "item-img" %>
           <div class='item-info'>
             <h3 class='item-name'>
-              商品を出品してね！
+              タイトル 例）○○のコスメ
             </h3>
             <div class='item-price'>
-              <span>99999999円<br>(税込み)</span>
+              <span>3,000~5,000円</span>
               <%# <div class='star-btn'> %>
-                <%# <%= image_tag "star.png", class:"star-icon" %> %>
+                <%# <%= image_tag "star.png", class:"star-icon" %> 
                 <%# <span class='star-count'>0</span> %>
               </div>
             </div>
