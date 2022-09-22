@@ -7,7 +7,7 @@ Okurimono
 # URL
 https://okurimono-gift.herokuapp.com/
 
-# テスト用アカウント
+# テスト用アカウント　　
 ･Basic認証ID： admin  
 ・Basic認証パスワード： 2022  
 ・メールアドレス： test1@example.com  
@@ -27,10 +27,10 @@ https://okurimono-gift.herokuapp.com/
 
 # 実装した機能についての画像やGIFおよびその説明
 
-# 実装予定の機能
+# 実装予定の機能　　
 ・フォロー機能  
 ・お気に入り機能  
-・Googleマップ表示機能
+・Googleマップ表示機能　　
 
 # データベース設計
 
@@ -38,13 +38,13 @@ https://okurimono-gift.herokuapp.com/
 # 画面遷移図
 
 
-# 開発環境
-・フロントエンド
-・バックエンド
-・インフラ
-・テスト
-・テキストエディタ
-・タスク管理
+# 開発環境　　
+・フロントエンド　　
+・バックエンド　　
+・インフラ　　
+・テスト　　
+・テキストエディタ　　
+・タスク管理　　
 
 # ローカルでの動作方法
 以下のコマンドを順に実行。
