@@ -46,12 +46,12 @@ https://okurimono-gift.herokuapp.com/
 ・テキストエディタ　　
 ・タスク管理　　
 
-# ローカルでの動作方法
-以下のコマンドを順に実行。
-% git clone https://github.com/okurimono-gift
-% cd okurimono-gift
-% bundle install
-% yarn install
+# ローカルでの動作方法　　
+以下のコマンドを順に実行。　　
+% git clone https://github.com/okurimono-gift　　
+% cd okurimono-gift　　
+% bundle install　　
+% yarn install　　
 
 # 工夫したポイント
 
