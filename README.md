@@ -8,7 +8,7 @@ Okurimono
 https://okurimono-gift.herokuapp.com/
 
 # テスト用アカウント
-･Basic認証ID： admin  
+・Basic認証ID： admin  
 ・Basic認証パスワード： 2022  
 ・メールアドレス： test1@example.com  
 ・パスワード： 111aaa
