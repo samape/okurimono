@@ -2,37 +2,56 @@
 Okurimono
 
 # アプリケーション概要
-プレゼントにおすすめな商品情報をシェアできる。
+プレゼントにおすすめな商品情報をシェアできるWebアプリケーション
 
 # URL
 https://okurimono-gift.herokuapp.com/
 
 # テスト用アカウント
-・Basic認証ID：
-・Basic認証パスワード：
-・メールアドレス：
-・パスワード：
+･Basic認証ID： admin  
+・Basic認証パスワード： 2022  
+・メールアドレス： test1@example.com  
+・パスワード： 111aaa
 
 # 利用方法
-## 
+## 商品投稿
 
-##
+## タグ付する
+
 
 # アプリケーションを作成した背景
 
+
 # 洗い出した要件
+[要件を定義したシート](https://docs.google.com/spreadsheets/d/1Xf6_kf8KbsswHch7_SEWj-8VmFZWfwfuc5dovG7RKvA/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよびその説明
 
 # 実装予定の機能
+・フォロー機能  
+・お気に入り機能  
+・Googleマップ表示機能
 
 # データベース設計
 
+
 # 画面遷移図
 
+
 # 開発環境
+・フロントエンド
+・バックエンド
+・インフラ
+・テスト
+・テキストエディタ
+・タスク管理
 
 # ローカルでの動作方法
+以下のコマンドを順に実行。
+% git clone https://github.com/okurimono-gift
+% cd okurimono-gift
+% bundle install
+% yarn install
 
 # 工夫したポイント
 
