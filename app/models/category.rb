@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :item
+  has_many :items
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre

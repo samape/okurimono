@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one :category
-  has_one_attached :image
+  belongs_to :category
+  has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :price
