@@ -4,7 +4,7 @@
   <div class='form-wrap'>
     <div class='form-header'>
       <h1 class='form-header-text'>
-        会員情報入力
+        アカウント情報入力
       </h1>
     </div>
 
@@ -45,7 +45,7 @@
         <span class="indispensable">必須</span>
       </div>
       <div class='input-name-wrap'>
-        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-name", id:"last-name"}) %>
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"input-default", id:"last-name"}) %>
       </div>
     </div>
     <div class="form-group">
@@ -54,13 +54,13 @@
         <span class="indispensable">必須</span>
       </div>
       <div class='input-name-wrap'>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-name", id:"last-name-kana"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-default", id:"last-name-kana"}) %>
       </div>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">プロフィール</label>
-        <span class="indispensable">任意</span>
+        <span class="indispensable-opt">任意</span>
       </div>
       <div class='input-name-wrap'>
         <%= f.text_area :introduction, class:"input-intro", id:"last-name-kana", placeholder:"プロフィールを入力してください" %>
@@ -77,7 +77,7 @@
       </h2>
     </div>
     <div class='register-btn'>
-      <%= f.submit "会員登録" ,class:"register-red-btn" %>
+      <%= f.submit "アカウント登録" ,class:"register-yrw-btn" %>
     </div>
     <p class='register-info'>本人情報の登録について</p>
   </div>

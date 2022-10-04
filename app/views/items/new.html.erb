@@ -1,95 +1,86 @@
 <div class="items-sell-contents">
-  <header class="items-sell-header">
-    <%= link_to 'Okurimono', "/" %>
-  </header>
+  <%= render "shared/second-header" %>
+  
   <div class="items-sell-main">
-    <h2 class="items-sell-title">シェアしたい商品の情報を入力</h2>
+    <h2 class="items-sell-title">シェアする商品の情報を入力</h2>
     <%= form_with model: @item_category, url: items_path, id: 'new_post', local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+      <%= render 'shared/error_messages', model: f.object %>
 
-    <%# 商品画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        商品画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <div id="previews"></div>
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :images, name: 'item[images][]',data: {index: 0}, id:"item-image" %>
-      </div>
-    </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        タイトル
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"投稿のタイトル", maxlength:"40" %>
-      <div class="items-explain">
+      <%# 商品画像 %>
+      <div class="img-upload">
         <div class="weight-bold-text">
-          本文（商品の説明）
+          商品画像
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（商品の特徴やどのような人へのプレゼントに向いているかなど）例）" ,rows:"7" ,maxlength:"1000" %>
+        <div class="click-upload">
+          <div id="previews"></div>
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :images, name: "item[images][]", data: {index: 0}, id:"item-image" %>
+        </div>
       </div>
-    </div>
-    <%# /商品名と商品説明 %>
+      <%# /商品画像 %>
+      <%# 商品名と商品説明 %>
+      <div class="new-items">
+        <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"投稿のタイトル", maxlength:"40" %>
+        <div class="items-explain">
+          <div class="weight-bold-text">
+            商品の説明
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :content, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（商品の特徴やどのような人へのプレゼントに向いているかなど）例）" ,rows:"7" ,maxlength:"1000" %>
+        </div>
+      </div>
+      <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
-    <div class="items-detail">
-      <div class="weight-bold-text">投稿詳細</div>
-      <div class="form">
-        <div class="weight-bold-text">
-          価格帯
-          <span class="indispensable">必須</span>
+      <%# 商品の詳細 %>
+      <div class="items-detail">
+        <div class="weight-bold-text">投稿詳細</div>
+        <div class="form">
+          <div class="weight-bold-text">
+            価格帯
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-price"}) %>
+          <div class="weight-bold-text">
+            カテゴリ
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+          <div class="weight-bold-text">
+            タグ
+            <span class="indispensable">必須</span>
+          </div>
+          <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> 
+          <p>※下記どちらか一方を必ず入力してください。</p>
+          <div class="weight-bold-text">
+            ショップURL
+            <span class="indispensable-opt">どちらか必須</span>
+          </div>
+          <%= f.text_area :shop_url, class:"items-text", id:"item-tag", placeholder:"オンラインショップもしくは販売店のURLを入力" %>
+          <div class="weight-bold-text">
+            販売店の住所
+            <span class="indispensable-opt">どちらか必須</span>
+          </div>
+          <%= f.text_area :shop_address, class:"items-text", id:"item-tag", placeholder:"販売店舗がある場合、店舗の住所を入力してください" %>
         </div>
-        <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"select-box", id:"item-price"}) %>
-        <div class="weight-bold-text">
-          カテゴリー
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          タグ
-          <span class="indispensable">必須</span>
-        </div>
-        <%# <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-tag"}) %> %>
-        <div class="weight-bold-text">
-          ショップURL
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :shop_url, class:"select-box", id:"item-tag", placeholder:"オンラインショップもしくは販売店のURLを入力" %>
-        <div class="weight-bold-text">
-          販売店の住所
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_area :shop_address, class:"select-box", id:"item-tag", placeholder:"販売店舗がある場合、店舗の住所を入力してください" %>
       </div>
-    </div>
-    <%# /商品の詳細 %>
+      <%# /商品の詳細 %>
 
-    <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"post-btn" %>
-      <%= link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
-    <%# /下部ボタン %>
+      <%# 下部ボタン %>
+      <div class="post-btn-contents">
+        <%= f.submit "シェアする" ,class:"post-btn" %>
+        <%= link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    <% end %>
   </div>
-  <% end %>
 
-  <footer class="items-post-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">利用規約</a></li>
-    </ul>
-    <%= link_to 'Okurimono', "/" %>
-    <p class="inc">
-      ©︎Okurimono,Inc.
-    </p>
-  </footer>
+  <%= render "shared/second-footer" %>
 </div>

@@ -1,12 +1,15 @@
 .purchase-btn {
   width: 120px;
-  background: #3ccace;
+  background: #F0CF16;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
   right: 32px;
   position: fixed;
   padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
 .purchase-btn-text {

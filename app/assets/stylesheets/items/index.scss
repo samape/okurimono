@@ -3,7 +3,7 @@ a {
 }
 
 .main {
-  background: #f8f8f8;
+  background: #F9F7EF;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -16,13 +16,13 @@ a {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
+  padding: 3vh 15vw;
+  color: #43382B;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .service-title {
-  font-size: 8vh;
+  font-size: 3.5vh;
 }
 
 .service-explain {
@@ -43,7 +43,7 @@ a {
 }
 
 .item-contents>.title {
-  font-size: 5vh;
+  font-size: 4.5vh;
   line-height: 1.4;
   font-weight: bold;
 }
@@ -52,7 +52,7 @@ a {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #3ccace;
+  color: #D7BF9A;
   font-weight: bold;
 }
 
@@ -87,12 +87,14 @@ a {
 
 .item-name {
   font-size: 2.5vh;
+  text-decoration: none;
 }
 
 .item-price {
   font-size: 1.5vh;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
 }
 
 
