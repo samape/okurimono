@@ -33,7 +33,7 @@ https://okurimono-gift.herokuapp.com/
 ・Googleマップ表示機能  
 
 # データベース設計
-
+[![Image from Gyazo](https://i.gyazo.com/f5b9277a6a6eda8926a3af779344719a.png)](https://gyazo.com/f5b9277a6a6eda8926a3af779344719a)
 
 # 画面遷移図
 
