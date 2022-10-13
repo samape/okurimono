@@ -29,12 +29,15 @@ https://okurimono-gift.herokuapp.com/
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1Xf6_kf8KbsswHch7_SEWj-8VmFZWfwfuc5dovG7RKvA/edit?usp=sharing)
 
 # 実装した機能についての画像やGIFおよびその説明
+## トップページ（投稿一覧）
+[![Image from Gyazo](https://i.gyazo.com/6e1361cd84594630a71d81cfe932ca26.png)](https://gyazo.com/6e1361cd84594630a71d81cfe932ca26)
+
+## 商品投稿
+[![Image from Gyazo](https://i.gyazo.com/7a61d4504ae546809710a82960959c40.gif)](https://gyazo.com/7a61d4504ae546809710a82960959c40)
 
 # 実装予定の機能　　
 ・タグ付け機能　　
 ・フォロー機能 
-・フォロー機能 
-・フォロー機能  
 ・お気に入り機能  
 ・Googleマップ表示機能  
 
