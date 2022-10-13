@@ -36,10 +36,10 @@ https://okurimono-gift.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/7a61d4504ae546809710a82960959c40.gif)](https://gyazo.com/7a61d4504ae546809710a82960959c40)
 
 # 実装予定の機能　　
-・タグ付け機能　　
-・フォロー機能 
+・タグ付け機能  
+・フォロー機能  
 ・お気に入り機能  
-・Googleマップ表示機能  
+・Googleマップ表示機能
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/f5b9277a6a6eda8926a3af779344719a.png)](https://gyazo.com/f5b9277a6a6eda8926a3af779344719a)
